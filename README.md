@@ -5,4 +5,3 @@ This web application provides information about countries around the world. It i
 - [React/Typescript](https://react.dev)
 - [Sass](https://sass-lang.com/documentation)
 - [Axios](https://axios-http.com/docs/intro)
-- [Figma Design](https://www.figma.com/file/NC3QGx7uyMbJMvhzhRgGys/News-iOS-app?node-id=0%3A1)
