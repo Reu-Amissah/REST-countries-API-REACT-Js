@@ -1,9 +1,11 @@
-import "./App.css";
+import LandingPage from "./Pages/LandingPage/LandingPage";
+import Header from "./Components/Header/Header";
 
 function App() {
   return (
-    <div className="App">
-      Hello REST COUNTRY API!!! Welcome to JARVIS PROGRAMMING
+    <div>
+      <Header></Header>
+      <LandingPage></LandingPage>
     </div>
   );
 }
