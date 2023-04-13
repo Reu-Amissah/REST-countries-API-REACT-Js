@@ -1,3 +1,16 @@
+#body.dark-mode header {
+  background-color: #2b3844;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+}
+#body.dark-mode header .header-title,
+#body.dark-mode header .toggle-button {
+  color: #ffffff;
+}
+#body.dark-mode header .header-title:hover,
+#body.dark-mode header .toggle-button:hover {
+  background-color: #202c36;
+}
+
 * {
   font-family: "Nunito", sans-serif;
   margin: 0;
@@ -26,16 +39,23 @@ header .header-container .header-items .header-title {
   font-size: 24px;
   color: #111517;
 }
-header .header-container .header-items .dark-mode-toggle {
+header .header-container .header-items .toggle-button {
   font-weight: 600;
   font-size: 16px;
   color: #111517;
   display: flex;
   align-items: center;
+  padding: 5px;
 }
-header .header-container .header-items .dark-mode-toggle .material-symbols-outlined {
+header .header-container .header-items .toggle-button .material-symbols-outlined {
   width: 20px;
   height: 20px;
   padding-right: 8px;
   margin-top: -4px;
+}
+header .header-container .header-items .toggle-button:hover {
+  background-color: #f2f2f2;
+  border-radius: 5px;
+  cursor: pointer;
+  padding: 5px;
 }/*# sourceMappingURL=Header.css.map */

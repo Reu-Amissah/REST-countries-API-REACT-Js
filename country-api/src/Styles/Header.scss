@@ -1,3 +1,26 @@
+$background-color-white: #ffffff;
+$background-color-dark: #2b3844;
+$text-color-white: #111517;
+$text-color-dark: #ffffff;
+$body-color-white: #f2f2f2;
+$body-color-dark: #202c36;
+
+// --DARK MODE COLOR ASSIGNMENTS•
+#body.dark-mode {
+  header {
+    background-color: $background-color-dark;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+    .header-title,
+    .toggle-button {
+      color: $text-color-dark;
+      &:hover {
+        background-color: $body-color-dark;
+      }
+    }
+  }
+}
+// --DARK-MODE END•
+
 * {
   font-family: "Nunito", sans-serif;
   margin: 0;
@@ -5,7 +28,7 @@
 }
 
 header {
-  background-color: #ffffff;
+  background-color: $background-color-white;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
   position: fixed;
   top: 0;
@@ -21,19 +44,26 @@ header {
       .header-title {
         font-weight: 800;
         font-size: 24px;
-        color: #111517;
+        color: $text-color-white;
       }
-      .dark-mode-toggle {
+      .toggle-button {
         font-weight: 600;
         font-size: 16px;
-        color: #111517;
+        color: $text-color-white;
         display: flex;
         align-items: center;
+        padding: 5px;
         .material-symbols-outlined {
           width: 20px;
           height: 20px;
           padding-right: 8px;
           margin-top: -4px;
+        }
+        &:hover {
+          background-color: $body-color-white;
+          border-radius: 5px;
+          cursor: pointer;
+          padding: 5px;
         }
       }
     }
