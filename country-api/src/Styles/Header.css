@@ -1,1 +1,38 @@
-/*# sourceMappingURL=Header.css.map */
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #ffffff;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+}
+header .header-container {
+  width: 90%;
+  margin: auto;
+  padding-block: 20px;
+}
+header .header-container .header-items {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+header .header-container .header-items .header-title {
+  font-weight: 800;
+  font-size: 24px;
+  color: #111517;
+}
+header .header-container .header-items .dark-mode-toggle {
+  font-weight: 600;
+  font-size: 16px;
+  color: #111517;
+  display: flex;
+  align-items: center;
+}
+header .header-container .header-items .dark-mode-toggle .material-symbols-outlined {
+  width: 20px;
+  height: 20px;
+  padding-right: 8px;
+  margin-top: -4px;
+}/*# sourceMappingURL=Header.css.map */
