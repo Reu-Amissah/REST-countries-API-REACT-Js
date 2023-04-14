@@ -12,6 +12,8 @@ const Header = () => {
     setDarkMode(!isDarkMode);
     const rootElement = document.getElementById("body");
     rootElement.classList.toggle("dark-mode");
+    const landingElement = document.getElementById("landing");
+    landingElement.classList.toggle("dark-mode");
   };
 
   {

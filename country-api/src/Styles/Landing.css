@@ -18,8 +18,8 @@ header .header-container {
 }
 header .header-container .header-items {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 header .header-container .header-items .header-title {
   font-weight: 800;
@@ -34,11 +34,7 @@ header .header-container .header-items .toggle-button {
   align-items: center;
   padding: 5px;
 }
-header
-  .header-container
-  .header-items
-  .toggle-button
-  .material-symbols-outlined {
+header .header-container .header-items .toggle-button .material-symbols-outlined {
   width: 20px;
   height: 20px;
   padding-right: 8px;
@@ -64,15 +60,25 @@ header .header-container .header-items .toggle-button:hover {
   background-color: #202c36;
 }
 
-section.landing-page {
-  padding-top: 9%;
-  background-color: #fafafa;
-  height: 100vh;
+.landing-page.dark-mode {
+  background-color: #202c36;
+  color: #ffffff;
 }
 
-/*••• Manual style •••*/
-section.landing-page .items-div,
-.search-item {
+section.landing-page {
+  height: 100vh;
+  padding-top: 9%;
+  background-color: #fafafa;
+}
+section.landing-page .search-item {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+section.landing-page .items-div {
   width: 90%;
   margin: auto;
   display: flex;
@@ -83,4 +89,4 @@ section.landing-page .items-div,
 section.landing-page .items-div .item {
   width: 30%;
   height: 20vh;
-} /*# sourceMappingURL=Landing.css.map */
+}/*# sourceMappingURL=Landing.css.map */
