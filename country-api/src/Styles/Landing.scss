@@ -2,17 +2,29 @@
 @import "./Header";
 @import "./DarkMode";
 
+@mixin applyFlex($wrap) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: $wrap;
+}
+@mixin horizontalAlignment() {
+  width: 90%;
+  margin: auto;
+}
+
 section.landing-page {
+  height: 100vh; //-------->>  temporary
   padding-top: 9%;
   background-color: $body-color-white;
-  height: 100vh; //-------->>  temporary
+  // --- ••••••• Error <--WATCH SASS NOT WORKING--> •••••• --- //
+  .search-item {
+    @include horizontalAlignment();
+    @include applyFlex(wrap);
+  }
   .items-div {
-    width: 90%;
-    margin: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
+    @include horizontalAlignment();
+    @include applyFlex(wrap);
     .item {
       width: 30%;
       height: 20vh;
