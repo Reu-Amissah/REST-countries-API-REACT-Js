@@ -3,7 +3,7 @@ import "../Styles/Landing.css";
 
 const LandingPage = () => {
   return (
-    <section className="landing-page">
+    <section className="landing-page" id="landing">
       <div className="search-item">
         <input placeholder="Search for a country..."></input>
         <select>
