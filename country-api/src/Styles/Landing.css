@@ -41,7 +41,7 @@ header .header-container .header-items .toggle-button .material-symbols-outlined
   margin-top: -4px;
 }
 header .header-container .header-items .toggle-button:hover {
-  background-color: #f2f2f2;
+  background-color: #fafafa;
   border-radius: 5px;
   cursor: pointer;
   padding: 5px;
@@ -61,4 +61,26 @@ header .header-container .header-items .toggle-button:hover {
 #body.dark-mode header .header-title:hover,
 #body.dark-mode header .toggle-button:hover {
   background-color: #202c36;
+}
+
+#body {
+  display: block;
+}
+
+section.landing-page {
+  padding-top: 9%;
+  background-color: #fafafa;
+  height: 100vh;
+}
+section.landing-page .items-div {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+section.landing-page .items-div .item {
+  width: 30%;
+  height: 20vh;
 }/*# sourceMappingURL=Landing.css.map */
