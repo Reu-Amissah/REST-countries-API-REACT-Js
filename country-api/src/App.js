@@ -5,12 +5,15 @@ import LandingPage from "./Screens/LandingPage";
 
 function App() {
   return (
-    <div id="body">
-      <Header></Header>
+    <>
+      <div id="body">
+        <Header></Header>
+      </div>
       <Routes>
         <Route path="/" element={<LandingPage />} />
+        <Route path="/detail/:id" element={<h2>Hello</h2>} />
       </Routes>
-    </div>
+    </>
   );
 }
 

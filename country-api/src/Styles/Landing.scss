@@ -1,3 +1,21 @@
 @import "./colors-font";
 @import "./Header";
 @import "./DarkMode";
+
+section.landing-page {
+  padding-top: 9%;
+  background-color: $body-color-white;
+  height: 100vh; //-------->>  temporary
+  .items-div {
+    width: 90%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    .item {
+      width: 30%;
+      height: 20vh;
+    }
+  }
+}
