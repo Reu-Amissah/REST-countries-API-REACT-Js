@@ -1,8 +1,9 @@
 import React from "react";
 import "../Styles/Header.css";
 import { useState } from "react";
-// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-// import { faMoon } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMoon } from "@fortawesome/free-regular-svg-icons";
+// import { faMoonRegular } from "@fortawesome/free-regular-svg-icons";
 
 const Header = () => {
   const [isDarkMode, setDarkMode] = useState(false);
@@ -13,13 +14,29 @@ const Header = () => {
     rootElement.classList.toggle("dark-mode");
   };
 
+  {
+    /*---TOGGLE ICON FOR DARK-MODE FUNX--- */
+  }
+  const icon = () => {
+    if (isDarkMode) {
+      return <span class="material-symbols-outlined">dark_mode</span>;
+    } else {
+      return (
+        <FontAwesomeIcon
+          icon={faMoon}
+          style={{ width: "20px", height: "20px", paddingRight: "8px" }}
+        ></FontAwesomeIcon>
+      );
+    }
+  };
+
   return (
     <header>
       <div className="header-container">
         <div className="header-items">
           <div className="header-title">Where in the world</div>
           <div className="toggle-button" onClick={handleClick}>
-            <span class="material-symbols-outlined">dark_mode</span>
+            {icon()}
             Dark Mode
           </div>
         </div>

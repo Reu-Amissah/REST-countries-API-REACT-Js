@@ -7,6 +7,7 @@ $body-color-dark: #202c36;
 
 // --DARK MODE COLOR ASSIGNMENTS•
 #body.dark-mode {
+  animation: easein 0.4;
   header {
     background-color: $background-color-dark;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
