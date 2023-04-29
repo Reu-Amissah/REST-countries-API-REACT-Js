@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../Styles/Landing.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-regular-svg-icons";
 
 const LandingPage = () => {
   // const response = fetch("https://restcountries.com/v3.1/all");
@@ -56,24 +58,42 @@ const LandingPage = () => {
   return (
     <section className="landing-page" id="landing">
       <div className="search-item">
-        <input placeholder="Search for a country..."></input>
-        <select>
-          <option>Hello</option>
-          <option>Hi</option>
+        <div className="search">
+          <span className="material-symbols-outlined">search</span>
+          <input
+            className="search-input"
+            placeholder="Search for a country..."
+          ></input>
+        </div>
+        <select className="filter">
+          {/* filter by region selector */}
+          <option>Filter by Region</option>
+          {data.map((item, index) => (
+            <option className="item" key={index}>
+              {item.region}
+            </option>
+          ))}
         </select>
       </div>
+
       <div className="items-div">
-        <div className="item">item1</div>
-        <div className="item">item2</div>
-        <div className="item">item3</div>
-        <div className="item">item4</div>
-        <div className="item">item5</div>
-        <div className="item">item6</div>
-        <div className="item">item7</div>
         {data.map((item, index) => (
-          <li key={index}>{item.capital}</li>
+          <div className="item" key={index}>
+            <img
+              src={item.flags.png}
+              width={"100%"}
+              height={160}
+              alt="country-flag"
+            ></img>
+            <div className="item-description">
+              <h3>{item.name.official}</h3>
+              <p>Population: {item.population}</p>
+              <p>Region: {item.region}</p>
+              <p>Capital: {item.capital}</p>
+            </div>
+          </div>
         ))}
-        {/* <div className="item"></div> */}
+        <div className="item"></div>
       </div>
     </section>
   );
