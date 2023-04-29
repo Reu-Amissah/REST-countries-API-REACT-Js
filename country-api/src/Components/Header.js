@@ -21,7 +21,7 @@ const Header = () => {
   }
   const icon = () => {
     if (isDarkMode) {
-      return <span class="material-symbols-outlined">dark_mode</span>;
+      return <span className="material-symbols-outlined">dark_mode</span>;
     } else {
       return (
         <FontAwesomeIcon
