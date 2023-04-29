@@ -4,4 +4,3 @@ This web application provides information about countries around the world. It i
 ## Tech Stack and Libraries
 - [React/Js](https://react.dev)
 - [Sass](https://sass-lang.com/documentation)
-- [Axios](https://axios-http.com/docs/intro)
