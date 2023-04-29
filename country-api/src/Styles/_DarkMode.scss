@@ -23,8 +23,10 @@
       color: $text-color-dark;
       .search-input {
         background-color: $background-color-dark;
-        // color: $text-color-dark;
-        color: white;
+        color: $text-color-dark;
+        &::placeholder {
+          color: $text-color-dark;
+        }
       }
     }
     .filter {

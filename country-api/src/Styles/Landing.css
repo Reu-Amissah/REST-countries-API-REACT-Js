@@ -71,7 +71,13 @@ header .header-container .header-items .toggle-button:hover {
 }
 .landing-page.dark-mode .search-item .search .search-input {
   background-color: #2b3844;
-  color: white;
+  color: #ffffff;
+}
+.landing-page.dark-mode .search-item .search .search-input::-moz-placeholder {
+  color: #ffffff;
+}
+.landing-page.dark-mode .search-item .search .search-input::placeholder {
+  color: #ffffff;
 }
 .landing-page.dark-mode .search-item .filter {
   background-color: #2b3844;
@@ -113,6 +119,7 @@ section.landing-page .search-item .search .search-input {
   outline: none;
 }
 section.landing-page .search-item .filter {
+  cursor: pointer;
   width: 200px;
   background-color: #ffffff;
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
@@ -131,6 +138,7 @@ section.landing-page .items-div {
   flex-wrap: wrap;
 }
 section.landing-page .items-div .item {
+  cursor: pointer;
   width: 23%;
   background-color: #ffffff;
   box-shadow: 0px 2px 9px rgba(0, 0, 0, 0.0532439);
@@ -139,4 +147,14 @@ section.landing-page .items-div .item {
 section.landing-page .items-div .item .item-description {
   padding-inline: 24px;
   padding-block: 30px;
+}
+section.landing-page .items-div .item .item-description h3 {
+  font-weight: 800;
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+section.landing-page .items-div .item .item-description p {
+  font-weight: 600;
+  font-size: 14px;
+  padding-bottom: 8px;
 }/*# sourceMappingURL=Landing.css.map */
