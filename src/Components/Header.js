@@ -44,6 +44,7 @@ const Header = () => {
         </div>
       </div>
       <div></div> {/* dummy commit */}
+      <div></div> {/* dummy commit */}
     </header>
   );
 };
