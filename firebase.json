@@ -1,0 +1,26 @@
+{
+  "name": "Deploy to Firebase Hosting on PR",
+  "on": "pull_request",
+  "jobs": {
+    "build_and_preview": {
+      "if": "${{ github.event.pull_request.head.repo.full_name == github.repository }}",
+      "runs-on": "ubuntu-latest",
+      "steps": [
+        {
+          "uses": "actions/checkout@v3"
+        },
+        {
+          "run": "npm i && npm i --save @fortawesome/react-fontawesome@latest && npm run build"
+        },
+        {
+          "uses": "FirebaseExtended/action-hosting-deploy@v0",
+          "with": {
+            "repoToken": "${{ secrets.GITHUB_TOKEN }}",
+            "firebaseServiceAccount": "${{ secrets.FIREBASE_SERVICE_ACCOUNT_REST_COUNTRY_API_EB8EA }}",
+            "projectId": "rest-country-api-eb8ea"
+          }
+        }
+      ]
+    }
+  }
+}
