@@ -16,9 +16,6 @@ const Header = () => {
     landingElement.classList.toggle("dark-mode");
   };
 
-  {
-    /*---TOGGLE ICON FOR DARK-MODE FUNX--- */
-  }
   const icon = () => {
     if (isDarkMode) {
       return <span className="material-symbols-outlined">dark_mode</span>;
@@ -43,8 +40,6 @@ const Header = () => {
           </div>
         </div>
       </div>
-      <div></div> {/* dummy commit */}
-      <div></div> {/* dummy commit */}
     </header>
   );
 };
