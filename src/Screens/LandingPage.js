@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "../Styles/Landing.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass } from "@fortawesome/free-regular-svg-icons";
+// import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+// import { faMagnifyingGlass } from "@fortawesome/free-regular-svg-icons";
 
 const LandingPage = () => {
   // const response = fetch("https://restcountries.com/v3.1/all");
