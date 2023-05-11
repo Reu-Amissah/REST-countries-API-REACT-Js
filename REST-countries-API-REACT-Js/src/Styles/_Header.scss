@@ -1,0 +1,42 @@
+header {
+  background-color: $background-color-white;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  .header-container {
+    width: 90%;
+    margin: auto;
+    padding-block: 20px;
+    .header-items {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      .header-title {
+        font-weight: 800;
+        font-size: 24px;
+        color: $text-color-white;
+      }
+      .toggle-button {
+        font-weight: 600;
+        font-size: 16px;
+        color: $text-color-white;
+        display: flex;
+        align-items: center;
+        padding: 5px;
+        .material-symbols-outlined {
+          width: 20px;
+          height: 20px;
+          padding-right: 8px;
+          margin-top: -4px;
+        }
+        &:hover {
+          background-color: $body-color-white;
+          border-radius: 5px;
+          cursor: pointer;
+          padding: 5px;
+        }
+      }
+    }
+  }
+}
