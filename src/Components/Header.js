@@ -40,6 +40,7 @@ const Header = () => {
           </div>
         </div>
       </div>
+      {/* npm i && npm i --save @fortawesome/react-fontawesome@latest && npm run build */}
     </header>
   );
 };
