@@ -42,9 +42,7 @@ const LandingPage = () => {
 
     const fetchData = async () => {
       try {
-        const response = await fetch(
-          `https://restcountries.com/v3.1/${filterPath}/${filterSearch}`
-        );
+        const response = await fetch(`https://restcountries.com/v3.1/all`);
         const jsonData = await response.json();
         setData(jsonData);
       } catch (error) {
