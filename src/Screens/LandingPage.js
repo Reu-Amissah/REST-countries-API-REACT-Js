@@ -30,20 +30,28 @@ const LandingPage = () => {
   const [filterSearch, setFilterSearch] = useState("");
 
   useEffect(() => {
-    fetchData();
+    fetch(`https://restcountries.com/v3.1/${filterPath}/${filterSearch}`)
+      .then((response) => response.json())
+      .then((responseJSON) => {
+        setData(responseJSON);
+        console.log(responseJSON);
+      })
+      .catch((error) => {
+        //handle error
+      });
   }, []);
 
-  const fetchData = async () => {
-    try {
-      const response = await fetch(
-        `https://restcountries.com/v3.1/${filterPath}/${filterSearch}`
-      );
-      const jsonData = await response.json();
-      setData(jsonData);
-    } catch (error) {
-      console.error("Error:", error);
-    }
-  };
+  // const fetchData = async () => {
+  //   try {
+  //     const response = await fetch(
+  //       `https://restcountries.com/v3.1/${filterPath}/${filterSearch}`
+  //     );
+  //     const jsonData = await response.json();
+  //     setData(jsonData);
+  //   } catch (error) {
+  //     console.error("Error:", error);
+  //   }
+  // };
 
   const handleSearch = (e) => {
     if (e.target.value === "") {
