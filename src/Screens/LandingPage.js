@@ -26,6 +26,8 @@ const LandingPage = () => {
   // });
 
   const [data, setData] = useState([]);
+  const [filterPath, setFilterPath] = useState("all");
+  const [filterSearch, setFilterSearch] = useState("");
 
   useEffect(() => {
     fetchData();
@@ -33,7 +35,9 @@ const LandingPage = () => {
 
   const fetchData = async () => {
     try {
-      const response = await fetch("https://restcountries.com/v3.1/all");
+      const response = await fetch(
+        `https://restcountries.com/v3.1/${filterPath}/${filterSearch}`
+      );
       const jsonData = await response.json();
       setData(jsonData);
     } catch (error) {
@@ -41,31 +45,55 @@ const LandingPage = () => {
     }
   };
 
-  fetch("https://restcountries.com/v3.1/all")
-    .then((response) => response.json())
-    .then((responseJSON) => {
-      // do stuff with responseJSON here...
-      console.log(responseJSON);
-    })
-    .catch((error) => {
-      //handle error
-    });
+  const handleSearch = (e) => {
+    if (e.target.value === "") {
+      setFilterPath("all");
+    } else {
+      setFilterPath("name");
+    }
+    setFilterSearch(e.target.value);
+    fetch(`https://restcountries.com/v3.1/${filterPath}/${filterSearch}`)
+      .then((response) => response.json())
+      .then((responseJSON) => {
+        setData(responseJSON);
+        console.log(responseJSON);
+      })
+      .catch((error) => {
+        //handle error
+      });
+  };
 
-  // .then((data) => {
-  //   //handle data
-  //   console.log(data);
-  // })
+  const handleFilter = (e) => {
+    if (e.target.value === "") {
+      setFilterPath("all");
+    } else {
+      setFilterPath("region");
+    }
+    setFilterSearch(e.target.value);
+    fetch(`https://restcountries.com/v3.1/${filterPath}/${filterSearch}`)
+      .then((response) => response.json())
+      .then((responseJSON) => {
+        setData(responseJSON);
+        console.log(responseJSON);
+      })
+      .catch((error) => {
+        //handle error
+      });
+  };
+
   return (
     <section className="landing-page" id="landing">
       <div className="search-item">
         <div className="search">
           <span className="material-symbols-outlined">search</span>
           <input
+            id="search"
             className="search-input"
             placeholder="Search for a country..."
+            onChange={handleSearch}
           ></input>
         </div>
-        <select className="filter">
+        <select className="filter" onChange={handleFilter}>
           {/* filter by region selector */}
           <option>Filter by Region</option>
           {data.map((item, index) => (
