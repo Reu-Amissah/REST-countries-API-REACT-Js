@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "../Styles/Landing.css";
 // import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 // import { faMagnifyingGlass } from "@fortawesome/free-regular-svg-icons";
 
-const LandingPage = () => {
+function LandingPage() {
   // const response = fetch("https://restcountries.com/v3.1/all");
   // const jsonData = response.json();
   // useEffect(() => {
@@ -45,6 +46,7 @@ const LandingPage = () => {
         const response = await fetch(`https://restcountries.com/v3.1/all`);
         const jsonData = await response.json();
         setData(jsonData);
+        console.log(jsonData[0]);
       } catch (error) {
         console.error("Error:", error);
       }
@@ -76,7 +78,6 @@ const LandingPage = () => {
       .then((response) => response.json())
       .then((responseJSON) => {
         setData(responseJSON);
-        console.log(responseJSON);
       })
       .catch((error) => {
         //handle error
@@ -94,7 +95,6 @@ const LandingPage = () => {
       .then((response) => response.json())
       .then((responseJSON) => {
         setData(responseJSON);
-        console.log(responseJSON);
       })
       .catch((error) => {
         //handle error
@@ -127,24 +127,26 @@ const LandingPage = () => {
       <div className="items-div">
         {data.map((item, index) => (
           <div className="item" key={index}>
-            <img
-              src={item.flags.png}
-              width={"100%"}
-              height={160}
-              alt="country-flag"
-            ></img>
-            <div className="item-description">
-              <h3>{item.name.official}</h3>
-              <p>Population: {item.population}</p>
-              <p>Region: {item.region}</p>
-              <p>Capital: {item.capital}</p>
-            </div>
+            <Link to={`detial/${index}`}>
+              <img
+                src={item.flags.png}
+                width={"100%"}
+                height={160}
+                alt="country-flag"
+              ></img>
+              <div className="item-description">
+                <h3>{item.name.official}</h3>
+                <p>Population: {item.population}</p>
+                <p>Region: {item.region}</p>
+                <p>Capital: {item.capital}</p>
+              </div>
+            </Link>
           </div>
         ))}
         <div className="item"></div>
       </div>
     </section>
   );
-};
+}
 
 export default LandingPage;
