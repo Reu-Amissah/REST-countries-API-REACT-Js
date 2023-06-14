@@ -46,7 +46,6 @@ function LandingPage() {
         const response = await fetch(`https://restcountries.com/v3.1/all`);
         const jsonData = await response.json();
         setData(jsonData);
-        console.log(jsonData[0]);
       } catch (error) {
         console.error("Error:", error);
       }
@@ -127,7 +126,7 @@ function LandingPage() {
       <div className="items-div">
         {data.map((item, index) => (
           <div className="item" key={index}>
-            <Link to={`detial/${index}`}>
+            <Link to={`detail/${index}`}>
               <img
                 src={item.flags.png}
                 width={"100%"}

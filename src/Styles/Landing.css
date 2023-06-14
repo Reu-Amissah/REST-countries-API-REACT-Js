@@ -34,7 +34,11 @@ header .header-container .header-items .toggle-button {
   align-items: center;
   padding: 5px;
 }
-header .header-container .header-items .toggle-button .material-symbols-outlined {
+header
+  .header-container
+  .header-items
+  .toggle-button
+  .material-symbols-outlined {
   width: 20px;
   height: 20px;
   padding-right: 8px;
@@ -164,4 +168,4 @@ section.landing-page .items-div .item .item-description p {
 section.landing-page .items-div .item a {
   text-decoration: none;
   color: #111517;
-}/*# sourceMappingURL=Landing.css.map */
+} /*# sourceMappingURL=Landing.css.map */
