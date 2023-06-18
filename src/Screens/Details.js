@@ -3,9 +3,18 @@ import { useParams } from "react-router-dom";
 
 function Details() {
   const { id } = useParams();
-  const [data, setData] = useState("");
 
-  const selectedData = data[id];
+  const [selectedData, setSelectedData] = useState({});
+  const [countryNameOfficial, setCountryNameOfficial] = useState("");
+  const [countryNameNative, setCountryNameNative] = useState("");
+  const [countryPopulation, setCountryPopulation] = useState("");
+  const [countryRegion, setCountryRegion] = useState("");
+  const [countrySubRegion, setCountrySubRegion] = useState("");
+  const [countryDomain, setCountryDomain] = useState("");
+  const [countryCapital, setCountryCapital] = useState("");
+  const [countryLanguages, setCountryLanguages] = useState("");
+  const [countryBorder, setCountryBorder] = useState("");
+  const [countryFlag, setCountryFlag] = useState("");
 
   useEffect(() => {
     // fetch(`https://restcountries.com/v3.1/${filterPath}/${filterSearch}`)
@@ -22,8 +31,19 @@ function Details() {
       try {
         const response = await fetch(`https://restcountries.com/v3.1/all`);
         const jsonData = await response.json();
-        setData(jsonData);
-        console.log(data);
+
+        setCountryNameOfficial(jsonData[id].name.official);
+        setCountryNameNative(jsonData[id].name.nativeNmae);
+        setCountryPopulation(jsonData[id].population);
+        setCountryRegion(jsonData[id].region);
+        setCountrySubRegion(jsonData[id].subregion);
+        setCountryDomain(jsonData[id].tld);
+        setCountryCapital(jsonData[id].capital[0]);
+        setCountryLanguages(jsonData[id].languages);
+        setCountryBorder(jsonData[id].borders);
+        setCountryFlag(jsonData[id].flags.png);
+
+        console.log(jsonData[id]);
       } catch (error) {
         console.error("Error:", error);
       }
@@ -34,7 +54,11 @@ function Details() {
 
   return (
     <div>
-      <div style={{ paddingTop: "9%" }}>{selectedData[0]}</div>
+      <div style={{ paddingTop: "9%" }}>
+        {countryNameOfficial}
+        <div>{countryBorder}</div>
+        <div>{countryCapital}</div>
+      </div>
     </div>
   );
 }
