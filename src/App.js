@@ -2,6 +2,7 @@ import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Header from "./Components/Header";
 import LandingPage from "./Screens/LandingPage";
+import Details from "./Screens/Details";
 
 function App() {
   return (
@@ -11,7 +12,7 @@ function App() {
       </div>
       <Routes>
         <Route path="/" element={<LandingPage />} />
-        <Route path="/detail/:id" element={<h2>Hello</h2>} />
+        <Route path="/detail/:id" element={<Details />} />
       </Routes>
     </>
   );

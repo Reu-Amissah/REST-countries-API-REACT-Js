@@ -34,11 +34,7 @@ header .header-container .header-items .toggle-button {
   align-items: center;
   padding: 5px;
 }
-header
-  .header-container
-  .header-items
-  .toggle-button
-  .material-symbols-outlined {
+header .header-container .header-items .toggle-button .material-symbols-outlined {
   width: 20px;
   height: 20px;
   padding-right: 8px;
@@ -91,6 +87,9 @@ header .header-container .header-items .toggle-button:hover {
 .landing-page.dark-mode .items-div .item {
   background-color: #2b3844;
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+  color: #ffffff;
+}
+.landing-page.dark-mode .items-div .item a {
   color: #ffffff;
 }
 
@@ -161,4 +160,8 @@ section.landing-page .items-div .item .item-description p {
   font-weight: 600;
   font-size: 14px;
   padding-bottom: 8px;
-} /*# sourceMappingURL=Landing.css.map */
+}
+section.landing-page .items-div .item a {
+  text-decoration: none;
+  color: #111517;
+}/*# sourceMappingURL=Landing.css.map */
