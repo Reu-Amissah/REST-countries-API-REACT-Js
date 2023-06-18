@@ -49,7 +49,7 @@ function Details() {
     };
 
     fetchData();
-  }, []);
+  }, [id]);
 
   return (
     <div>
