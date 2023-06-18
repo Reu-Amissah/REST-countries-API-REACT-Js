@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 function Details() {
   const { id } = useParams();
 
-  const [selectedData, setSelectedData] = useState({});
   const [countryNameOfficial, setCountryNameOfficial] = useState("");
   const [countryNameNative, setCountryNameNative] = useState("");
   const [countryPopulation, setCountryPopulation] = useState("");
@@ -55,6 +54,13 @@ function Details() {
   return (
     <div>
       <div style={{ paddingTop: "9%" }}>
+        <div>{countryPopulation}</div>
+        <div>{countryRegion}</div>
+        <div>{countryNameNative}</div>
+        <div>{countrySubRegion}</div>
+        <div>{countryDomain}</div>
+        <div>{countryFlag}</div>
+        <div>{countryLanguages}</div>
         {countryNameOfficial}
         <div>{countryBorder}</div>
         <div>{countryCapital}</div>
