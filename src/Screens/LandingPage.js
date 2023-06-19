@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../Styles/Landing.css";
+import "../Styles/Mq.css";
 
 function LandingPage() {
   const [data, setData] = useState([]);

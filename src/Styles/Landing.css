@@ -101,14 +101,14 @@ header .header-container .header-items .toggle-button:hover {
   background-color: #2b3844;
   color: #ffffff;
 }
-.details-page.dark-mode .details-container .details-body .details-content .borders-content .borders {
+.details-page.dark-mode .details-container .details-body .details-content .borders-content .border-items .borders {
   background-color: #2b3844;
 }
 
 section.details-page {
   height: 90vh;
   background-color: #ffffff;
-  padding-top: 9%;
+  padding-top: 15vh;
 }
 section.details-page .details-container {
   width: 90%;
@@ -170,10 +170,13 @@ section.details-page .details-container .details-body .details-content .borders-
   font-size: 16px;
   font-weight: 300;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
 }
-section.details-page .details-container .details-body .details-content .borders-content .borders {
+section.details-page .details-container .details-body .details-content .borders-content .border-items {
+  display: flex;
+  flex-wrap: wrap;
+}
+section.details-page .details-container .details-body .details-content .borders-content .border-items .borders {
   width: 110px;
   height: 28px;
   margin-top: 10px;
@@ -191,8 +194,9 @@ section.details-page .details-container .details-body .details-content .borders-
 }
 
 section.landing-page {
-  padding-top: 9%;
+  padding-top: 15vh;
   background-color: #fafafa;
+  width: 100%;
 }
 section.landing-page .search-item {
   width: 90%;

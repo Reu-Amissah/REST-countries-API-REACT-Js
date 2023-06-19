@@ -1,5 +1,6 @@
 import React from "react";
 import "../Styles/Landing.css";
+import "../Styles/Mq.css";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";

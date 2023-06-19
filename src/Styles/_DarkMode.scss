@@ -61,8 +61,10 @@
     .details-body {
       .details-content {
         .borders-content {
-          .borders {
-            background-color: $background-color-dark;
+          .border-items {
+            .borders {
+              background-color: $background-color-dark;
+            }
           }
         }
       }

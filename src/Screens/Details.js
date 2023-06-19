@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../Styles/Landing.css";
+import "../Styles/Mq.css";
 
 function Details() {
   const { id } = useParams();
@@ -101,13 +102,17 @@ function Details() {
                 Border Countries:{" "}
               </div>
               {Array.isArray(countryBorder) ? (
-                countryBorder.map((item, index) => (
-                  <div className="borders" key={index}>
-                    {item}
-                  </div>
-                ))
+                <div className="border-items">
+                  {countryBorder.map((item, index) => (
+                    <div className="borders" key={index}>
+                      {item}
+                    </div>
+                  ))}
+                </div>
               ) : (
-                <div className="borders">No Borders</div>
+                <div className="borders-container">
+                  <div className="borders">No Borders</div>
+                </div>
               )}
             </div>
           </div>

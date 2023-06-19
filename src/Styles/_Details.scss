@@ -1,9 +1,9 @@
-@mixin applyFlex($wrap, $justify) {
-  display: flex;
-  justify-content: $justify;
-  align-items: center;
-  flex-wrap: $wrap;
-}
+// @mixin applyFlex($wrap, $justify) {
+//   display: flex;
+//   justify-content: $justify;
+//   align-items: center;
+//   flex-wrap: $wrap;
+// }
 @mixin horizontalAlignment() {
   width: 90%;
   margin: auto;
@@ -12,7 +12,7 @@
 section.details-page {
   height: 90vh;
   background-color: $background-color-white;
-  padding-top: 9%;
+  padding-top: 15vh;
   .details-container {
     @include horizontalAlignment();
     .back-button {
@@ -70,20 +70,24 @@ section.details-page {
           font-size: 16px;
           font-weight: 300;
           display: flex;
-          flex-wrap: wrap;
           //   justify-content: center;
           align-items: center;
-          .borders {
-            width: 110px;
-            height: 28px;
-            margin-top: 10px;
-            margin-right: 10px;
+          .border-items {
             display: flex;
-            justify-content: center;
-            align-items: center;
-            border-radius: 2px;
-            background-color: $background-color-white;
-            box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
+
+            flex-wrap: wrap;
+            .borders {
+              width: 110px;
+              height: 28px;
+              margin-top: 10px;
+              margin-right: 10px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              border-radius: 2px;
+              background-color: $background-color-white;
+              box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.104931);
+            }
           }
         }
       }
