@@ -1,0 +1,355 @@
+* {
+  font-family: "Nunito", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#body.dark-mode header {
+  background-color: #2b3844;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+}
+#body.dark-mode header .header-title,
+#body.dark-mode header .toggle-button {
+  color: #ffffff;
+}
+#body.dark-mode header .header-title:hover,
+#body.dark-mode header .toggle-button:hover {
+  background-color: #202c36;
+}
+
+.landing-page.dark-mode {
+  background-color: #202c36;
+  color: #ffffff;
+}
+.landing-page.dark-mode .search-item .search {
+  background-color: #2b3844;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+  color: #ffffff;
+}
+.landing-page.dark-mode .search-item .search .search-input {
+  background-color: #2b3844;
+  color: #ffffff;
+}
+.landing-page.dark-mode .search-item .search .search-input::-moz-placeholder {
+  color: #ffffff;
+}
+.landing-page.dark-mode .search-item .search .search-input::placeholder {
+  color: #ffffff;
+}
+.landing-page.dark-mode .search-item .filter {
+  background-color: #2b3844;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+  color: #ffffff;
+}
+.landing-page.dark-mode .items-div .item {
+  background-color: #2b3844;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
+  color: #ffffff;
+}
+.landing-page.dark-mode .items-div .item a {
+  color: #ffffff;
+}
+
+.details-page.dark-mode {
+  background-color: #202c36;
+  color: #ffffff;
+}
+.details-page.dark-mode .details-container .back-button {
+  background-color: #2b3844;
+  color: #ffffff;
+}
+.details-page.dark-mode .details-container .details-body .details-content .borders-content .border-items .borders {
+  background-color: #2b3844;
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+  header .header-container {
+    width: 90%;
+    padding-block: 25px;
+  }
+  header .header-container .header-items .header-title {
+    font-size: 18px;
+  }
+  header .header-container .header-items .toggle-button {
+    font-size: 12px;
+  }
+}
+@media only screen and (max-width: 600px) {
+  section.landing-page {
+    width: 100%;
+  }
+  section.landing-page .search-item {
+    width: 90%;
+    margin: auto;
+    display: block;
+  }
+  section.landing-page .search-item .search {
+    width: 90%;
+    padding: 10px;
+    padding-inline: 20px;
+    margin-bottom: 25px;
+    font-size: 12px;
+  }
+  section.landing-page .search-item .search .search-input {
+    width: 100%;
+    font-size: 12px;
+  }
+  section.landing-page .search-item .filter {
+    width: 50%;
+    padding-inline: 20px;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  section.landing-page .items-div .item {
+    border-radius: 5px;
+    width: 80%;
+    margin: auto;
+    margin-block: 20px;
+  }
+  section.landing-page .items-div .item img {
+    border-radius: 5px 5px 0 0;
+  }
+  section.landing-page .items-div .item .item-description {
+    padding-inline: 20px;
+    padding-block: 25px;
+  }
+  section.landing-page .items-div .item .item-description h3 {
+    font-weight: 800;
+    font-size: 18px;
+    padding-bottom: 20px;
+  }
+  section.landing-page .items-div .item .item-description p {
+    font-weight: 600;
+    font-size: 14px;
+    padding-bottom: 8px;
+  }
+  section.landing-page .items-div .item a {
+    text-decoration: none;
+    color: #111517;
+  }
+  section.details-page {
+    height: auto;
+  }
+  section.details-page .details-container .back-button {
+    border-radius: 0;
+    margin-bottom: 15%;
+    font-size: 14px;
+    width: 104px;
+    height: 32px;
+  }
+  section.details-page .details-container .details-body {
+    display: block;
+  }
+  section.details-page .details-container .details-body .details-flag {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 10%;
+  }
+  section.details-page .details-container .details-body .details-content {
+    width: 100%;
+  }
+  section.details-page .details-container .details-body .details-content h3 {
+    font-weight: bolder;
+    font-size: 22px;
+    padding-bottom: 10px;
+  }
+  section.details-page .details-container .details-body .details-content .details-sub-content {
+    font-size: 14px;
+    display: block;
+  }
+  section.details-page .details-container .details-body .details-content .details-sub-content .details-left {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  section.details-page .details-container .details-body .details-content .details-sub-content .details-right {
+    width: 100%;
+  }
+  section.details-page .details-container .details-body .details-content .borders-content {
+    font-size: 14px;
+    display: block;
+  }
+  section.details-page .details-container .details-body .details-content .borders-content .border-items {
+    display: flex;
+  }
+  section.details-page .details-container .details-body .details-content .borders-content .border-items .borders {
+    width: 30%;
+    height: 28px;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    background-color: #ffffff;
+  }
+}
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+  section.landing-page {
+    width: 100%;
+  }
+  section.landing-page .search-item {
+    width: 90%;
+    margin: auto;
+    display: block;
+  }
+  section.landing-page .search-item .search {
+    width: 90%;
+    padding: 10px;
+    padding-inline: 20px;
+    margin-bottom: 25px;
+    font-size: 12px;
+  }
+  section.landing-page .search-item .search .search-input {
+    width: 100%;
+    font-size: 12px;
+  }
+  section.landing-page .search-item .filter {
+    width: 50%;
+    padding-inline: 20px;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  section.landing-page .items-div .item {
+    border-radius: 5px;
+    width: 45%;
+    margin: auto;
+    margin-block: 20px;
+  }
+  section.landing-page .items-div .item img {
+    border-radius: 5px 5px 0 0;
+  }
+  section.landing-page .items-div .item .item-description {
+    padding-inline: 20px;
+    padding-block: 25px;
+  }
+  section.landing-page .items-div .item .item-description h3 {
+    font-weight: 800;
+    font-size: 18px;
+    padding-bottom: 20px;
+  }
+  section.landing-page .items-div .item .item-description p {
+    font-weight: 600;
+    font-size: 14px;
+    padding-bottom: 8px;
+  }
+  section.landing-page .items-div .item a {
+    text-decoration: none;
+    color: #111517;
+  }
+  section.details-page {
+    height: auto;
+  }
+  section.details-page .details-container .back-button {
+    border-radius: 0;
+    margin-bottom: 15%;
+    font-size: 14px;
+    width: 104px;
+    height: 32px;
+  }
+  section.details-page .details-container .details-body {
+    display: block;
+  }
+  section.details-page .details-container .details-body .details-flag {
+    width: 100%;
+    margin: auto;
+    margin-bottom: 10%;
+  }
+  section.details-page .details-container .details-body .details-content {
+    width: 100%;
+  }
+  section.details-page .details-container .details-body .details-content h3 {
+    font-weight: bolder;
+    font-size: 22px;
+    padding-bottom: 10px;
+  }
+  section.details-page .details-container .details-body .details-content .details-sub-content {
+    font-size: 14px;
+    display: block;
+  }
+  section.details-page .details-container .details-body .details-content .details-sub-content .details-left {
+    width: 100%;
+    padding-bottom: 20px;
+  }
+  section.details-page .details-container .details-body .details-content .details-sub-content .details-right {
+    width: 100%;
+  }
+  section.details-page .details-container .details-body .details-content .borders-content {
+    font-size: 14px;
+    display: block;
+  }
+  section.details-page .details-container .details-body .details-content .borders-content .border-items {
+    display: flex;
+  }
+  section.details-page .details-container .details-body .details-content .borders-content .border-items .borders {
+    width: 30%;
+    height: 28px;
+    margin-top: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2px;
+    background-color: #ffffff;
+  }
+}
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+  section.landing-page {
+    width: 100%;
+  }
+  section.landing-page .search-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90%;
+    margin: auto;
+  }
+  section.landing-page .search-item .search {
+    width: 40%;
+    padding: 10px;
+    padding-inline: 20px;
+    margin-bottom: 25px;
+    font-size: 12px;
+  }
+  section.landing-page .search-item .search .search-input {
+    width: 100%;
+    font-size: 12px;
+  }
+  section.landing-page .search-item .filter {
+    width: 30%;
+    padding-inline: 20px;
+    font-size: 12px;
+    margin-bottom: 20px;
+  }
+  section.landing-page .items-div .item {
+    border-radius: 5px;
+    width: 30%;
+    margin: auto;
+    margin-block: 20px;
+  }
+  section.landing-page .items-div .item img {
+    border-radius: 5px 5px 0 0;
+  }
+  section.landing-page .items-div .item .item-description {
+    padding-inline: 20px;
+    padding-block: 25px;
+  }
+  section.landing-page .items-div .item .item-description h3 {
+    font-weight: 800;
+    font-size: 18px;
+    padding-bottom: 20px;
+  }
+  section.landing-page .items-div .item .item-description p {
+    font-weight: 600;
+    font-size: 14px;
+    padding-bottom: 8px;
+  }
+  section.landing-page .items-div .item a {
+    text-decoration: none;
+    color: #111517;
+  }
+}
+/* Large devices (laptops/desktops, 992px and up) */
+/* Extra large devices (large laptops and desktops, 1200px and up) *//*# sourceMappingURL=Mq.css.map */

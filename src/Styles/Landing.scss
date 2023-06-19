@@ -1,6 +1,11 @@
 @import "./colors-font";
 @import "./Header";
 @import "./DarkMode";
+@import "./Details";
+
+* {
+  font-family: "Nunito Sans", sans-serif;
+}
 
 @mixin applyFlex($wrap) {
   display: flex;
@@ -14,8 +19,9 @@
 }
 
 section.landing-page {
-  padding-top: 9%;
+  padding-top: 15vh;
   background-color: $body-color-white;
+  width: 100%;
   // --- ••••••• Error <--WATCH SASS NOT WORKING--> •••••• --- //
   .search-item {
     @include horizontalAlignment();
