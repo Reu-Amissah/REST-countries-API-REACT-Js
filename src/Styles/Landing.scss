@@ -1,6 +1,11 @@
 @import "./colors-font";
 @import "./Header";
 @import "./DarkMode";
+@import "./Details";
+
+* {
+  font-family: "Nunito Sans", sans-serif;
+}
 
 @mixin applyFlex($wrap) {
   display: flex;

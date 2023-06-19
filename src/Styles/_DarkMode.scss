@@ -48,3 +48,24 @@
     }
   }
 }
+
+//DARK MODE COLOR ASSIGNMENTS• BODY
+.details-page.dark-mode {
+  background-color: $body-color-dark;
+  color: $text-color-dark;
+  .details-container {
+    .back-button {
+      background-color: $background-color-dark;
+      color: $text-color-dark;
+    }
+    .details-body {
+      .details-content {
+        .borders-content {
+          .borders {
+            background-color: $background-color-dark;
+          }
+        }
+      }
+    }
+  }
+}
