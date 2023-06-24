@@ -2,11 +2,15 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "../Styles/Landing.css";
 import "../Styles/Mq.css";
+// import { faAslInterpreting } from "@fortawesome/free-solid-svg-icons";
 
 function LandingPage() {
   const [data, setData] = useState([]);
   const [filterPath, setFilterPath] = useState("all");
   const [filterSearch, setFilterSearch] = useState("");
+  const [defaultData, setDefaultData] = useState([]);
+
+  // const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -14,6 +18,7 @@ function LandingPage() {
         const response = await fetch(`https://restcountries.com/v3.1/all`);
         const jsonData = await response.json();
         setData(jsonData);
+        setDefaultData(jsonData);
       } catch (error) {
         console.error("Error:", error);
       }
@@ -22,6 +27,26 @@ function LandingPage() {
     fetchData();
   }, []);
 
+  // search filter UseEffect handler
+  useEffect(() => {
+    // setFilterSearch(e.target.value);
+    fetch(`https://restcountries.com/v3.1/${filterPath}/${filterSearch}`)
+      .then((response) => response.json())
+      .then((responseJSON) => {
+        if (responseJSON && responseJSON.length > 0) {
+          setData(responseJSON);
+        } else {
+          // Handle invalid search result
+          alert(`${filterSearch} is an Invalid input...`);
+          document.getElementById("search").value = "";
+          setData(defaultData); // setData to the defaultData generated
+        }
+      })
+      .catch((error) => {
+        //
+      });
+  }, [filterPath, filterSearch, defaultData]);
+
   const handleSearch = (e) => {
     if (e.target.value === "") {
       setFilterPath("all");
@@ -29,14 +54,6 @@ function LandingPage() {
       setFilterPath("name");
     }
     setFilterSearch(e.target.value);
-    fetch(`https://restcountries.com/v3.1/${filterPath}/${filterSearch}`)
-      .then((response) => response.json())
-      .then((responseJSON) => {
-        setData(responseJSON);
-      })
-      .catch((error) => {
-        //handle error
-      });
   };
 
   const handleFilter = (e) => {
@@ -46,15 +63,23 @@ function LandingPage() {
       setFilterPath("region");
     }
     setFilterSearch(e.target.value);
-    fetch(`https://restcountries.com/v3.1/${filterPath}/${filterSearch}`)
-      .then((response) => response.json())
-      .then((responseJSON) => {
-        setData(responseJSON);
-      })
-      .catch((error) => {
-        //handle error
-      });
+    // fetch(`https://restcountries.com/v3.1/${filterPath}/${filterSearch}`)
+    //   .then((response) => response.json())
+    //   .then((responseJSON) => {
+    //     setData(responseJSON);
+    //   })
+    //   .catch((error) => {
+    //     //handle error
+    //   });
   };
+
+  // const renderErrorMessage = () => {
+  //   return (
+  //     <div>
+  //       {errorMsg !== "" && <h1>{`Something went wrong: + ${errorMsg}`}</h1>}
+  //     </div>
+  //   );
+  // };
 
   return (
     <section className="landing-page" id="landing">
@@ -79,6 +104,7 @@ function LandingPage() {
         </select>
       </div>
 
+      {/* {renderErrorMessage()} */}
       <div className="items-div">
         {data.map((item, index) => (
           <div className="item" key={index}>
