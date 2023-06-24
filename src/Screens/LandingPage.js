@@ -27,7 +27,7 @@ function LandingPage() {
     fetchData();
   }, []);
 
-  // filter UseEffect handler
+  // search filter UseEffect handler
   useEffect(() => {
     // setFilterSearch(e.target.value);
     fetch(`https://restcountries.com/v3.1/${filterPath}/${filterSearch}`)
@@ -43,9 +43,9 @@ function LandingPage() {
         }
       })
       .catch((error) => {
-        setData(defaultData);
+        //
       });
-  }, [filterPath, filterSearch]);
+  }, [filterPath, filterSearch, defaultData]);
 
   const handleSearch = (e) => {
     if (e.target.value === "") {
