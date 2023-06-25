@@ -47,6 +47,25 @@ function LandingPage() {
       });
   }, [filterPath, filterSearch, defaultData]);
 
+  // filter Region UseEffect handler
+  useEffect(() => {
+    // setFilterSearch(e.target.value);
+    fetch(`https://restcountries.com/v3.1/${filterPath}/${filterSearch}`)
+      .then((response) => response.json())
+      .then((responseJSON) => {
+        if (responseJSON && responseJSON.length > 0) {
+          setData(responseJSON);
+        } else {
+          // Handle invalid search result
+          // document.getElementById("search").value = "";
+          setData(defaultData); // setData to the defaultData generated
+        }
+      })
+      .catch((error) => {
+        // alert(`${filterSearch} is an Invalid input...`);
+      });
+  }, [filterPath, filterSearch, defaultData]);
+
   const handleSearch = (e) => {
     if (e.target.value === "") {
       setFilterPath("all");
@@ -72,14 +91,7 @@ function LandingPage() {
     //     //handle error
     //   });
   };
-
-  // const renderErrorMessage = () => {
-  //   return (
-  //     <div>
-  //       {errorMsg !== "" && <h1>{`Something went wrong: + ${errorMsg}`}</h1>}
-  //     </div>
-  //   );
-  // };
+  const uniqueRegions = [...new Set(defaultData.map((item) => item.region))];
 
   return (
     <section className="landing-page" id="landing">
@@ -96,9 +108,9 @@ function LandingPage() {
         <select className="filter" onChange={handleFilter}>
           {/* filter by region selector */}
           <option>Filter by Region</option>
-          {data.map((item, index) => (
+          {uniqueRegions.map((region, index) => (
             <option className="item" key={index}>
-              {item.region}
+              {region}
             </option>
           ))}
         </select>
