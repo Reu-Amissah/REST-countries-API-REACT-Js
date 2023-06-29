@@ -1,10 +1,12 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "../Styles/Landing.css";
 import "../Styles/Mq.css";
+import { DarkModeContext } from "../Components/DarkMode";
 // import { faAslInterpreting } from "@fortawesome/free-solid-svg-icons";
 
 function LandingPage() {
+  const { isDarkMode } = useContext(DarkModeContext);
   const [data, setData] = useState([]);
   const [filterPath, setFilterPath] = useState("all");
   const [filterSearch, setFilterSearch] = useState("");
@@ -19,6 +21,7 @@ function LandingPage() {
         const jsonData = await response.json();
         setData(jsonData);
         setDefaultData(jsonData);
+        console.log(jsonData);
       } catch (error) {
         console.error("Error:", error);
       }
@@ -94,7 +97,10 @@ function LandingPage() {
   const uniqueRegions = [...new Set(defaultData.map((item) => item.region))];
 
   return (
-    <section className="landing-page" id="landing">
+    <section
+      className={`landing-page ${isDarkMode ? "dark-mode" : ""}`}
+      id="landing"
+    >
       <div className="search-item">
         <div className="search">
           <span className="material-symbols-outlined">search</span>
@@ -128,7 +134,7 @@ function LandingPage() {
                 alt="country-flag"
               ></img>
               <div className="item-description">
-                <h3>{item.name.common}</h3>
+                <h3>{item.name.official}</h3>
                 <p>Population: {item?.population}</p>
                 <p>Region: {item?.region}</p>
                 <p>Capital: {item?.capital}</p>

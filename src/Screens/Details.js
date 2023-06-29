@@ -1,10 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
 import "../Styles/Landing.css";
 import "../Styles/Mq.css";
+import { DarkModeContext } from "../Components/DarkMode";
 
 function Details() {
+  const { isDarkMode } = useContext(DarkModeContext);
+  const { toggleDarkMode } = useContext(DarkModeContext);
   const { id } = useParams();
   // const [data, setData] = useState(null);
   const [filteredData, setFilteredData] = useState(null);
@@ -88,7 +91,10 @@ function Details() {
   // }, [id]);
 
   return (
-    <section className="details-page" id="details">
+    <section
+      className={`details-page ${isDarkMode ? "dark-mode" : ""}`}
+      id="details"
+    >
       {/* <div>{filteredData?.flags?.png}</div> */}
       <div className="details-container">
         <Link to={"/"}>
@@ -153,9 +159,11 @@ function Details() {
               {Array.isArray(filteredData?.borders) ? (
                 <div className="border-items">
                   {filteredData?.borders.map((item, index) => (
-                    <div className="borders" key={index}>
-                      {item}
-                    </div>
+                    <Link to={`detail/${item}`}>
+                      <div className="borders" key={index}>
+                        {item}
+                      </div>
+                    </Link>
                   ))}
                 </div>
               ) : (
