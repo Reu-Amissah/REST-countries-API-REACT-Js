@@ -120,7 +120,7 @@ function LandingPage() {
       <div className="items-div">
         {data.map((item, index) => (
           <div className="item" key={index}>
-            <Link to={`detail/${index}`}>
+            <Link to={`detail/${item.area}`}>
               <img
                 src={item.flags.png}
                 width={"100%"}
@@ -128,10 +128,10 @@ function LandingPage() {
                 alt="country-flag"
               ></img>
               <div className="item-description">
-                <h3>{item.name.official}</h3>
-                <p>Population: {item.population}</p>
-                <p>Region: {item.region}</p>
-                <p>Capital: {item.capital}</p>
+                <h3>{item.name.common}</h3>
+                <p>Population: {item?.population}</p>
+                <p>Region: {item?.region}</p>
+                <p>Capital: {item?.capital}</p>
               </div>
             </Link>
           </div>
