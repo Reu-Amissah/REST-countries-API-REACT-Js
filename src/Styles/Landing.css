@@ -103,6 +103,7 @@ header .header-container .header-items .toggle-button:hover {
 }
 .details-page.dark-mode .details-container .details-body .details-content .borders-content .border-items .borders {
   background-color: #2b3844;
+  color: #ffffff;
 }
 
 section.details-page {

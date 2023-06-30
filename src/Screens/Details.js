@@ -1,33 +1,16 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import "../Styles/Landing.css";
 import "../Styles/Mq.css";
 import { DarkModeContext } from "../Components/DarkMode";
 
 function Details() {
   const { isDarkMode } = useContext(DarkModeContext);
-  const { toggleDarkMode } = useContext(DarkModeContext);
   const { id } = useParams();
-  // const [data, setData] = useState(null);
   const [filteredData, setFilteredData] = useState(null);
-  // const filteredData = data.filter((item) => item.area == id);
-  // console.log(filteredData);
-
-  // const [countryNameOfficial, setCountryNameOfficial] = useState("");
-  // const [countryNameNative, setCountryNameNative] = useState("");
-  // const [countryPopulation, setCountryPopulation] = useState("");
-  // const [countryRegion, setCountryRegion] = useState("");
-  // const [countrySubRegion, setCountrySubRegion] = useState("");
-  // const [countryDomain, setCountryDomain] = useState("");
-  // const [countryCapital, setCountryCapital] = useState("");
-  // const [countryLanguages, setCountryLanguages] = useState("");
-  // const [countryBorder, setCountryBorder] = useState([]);
-  // const [countryFlag, setCountryFlag] = useState("");
-  // const [countryCurrencies, setCountryCurrencies] = useState("");
 
   useEffect(() => {
-    // const searchQuery = `${encodeURIComponent(`${item.name}-${item.region}`)}`;
     fetch(`https://restcountries.com/v3.1/all`)
       .then((response) => response.json())
       .then((responseJSON) => {
@@ -47,7 +30,7 @@ function Details() {
       });
   }, [id]);
 
-  console.log(filteredData);
+  // console.log(filteredData);
   //
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -159,7 +142,7 @@ function Details() {
               {Array.isArray(filteredData?.borders) ? (
                 <div className="border-items">
                   {filteredData?.borders.map((item, index) => (
-                    <Link to={`detail/${item}`}>
+                    <Link to={`../border/${item}`}>
                       <div className="borders" key={index}>
                         {item}
                       </div>
