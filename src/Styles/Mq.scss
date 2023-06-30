@@ -114,12 +114,13 @@
             }
           }
           .borders-content {
+            width: 100%;
             font-size: 14px;
             display: block;
             .border-items {
               display: flex;
               .borders {
-                width: 30%;
+                width: 110px;
                 height: 28px;
                 margin-top: 10px;
                 margin-right: 10px;
@@ -237,16 +238,19 @@
             display: block;
             .border-items {
               display: flex;
-              .borders {
-                width: 30%;
-                height: 28px;
-                margin-top: 10px;
-                margin-right: 10px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                border-radius: 2px;
-                background-color: $background-color-white;
+              a {
+                text-decoration: none;
+                color: $text-color-white;
+                .borders {
+                  height: 28px;
+                  margin-top: 10px;
+                  margin-right: 10px;
+                  display: flex;
+                  justify-content: center;
+                  align-items: center;
+                  border-radius: 2px;
+                  background-color: $background-color-white;
+                }
               }
             }
           }

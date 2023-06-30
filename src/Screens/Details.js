@@ -19,6 +19,7 @@ function Details() {
           Object.keys(responseJSON).forEach((key) => {
             const res = responseJSON[key];
             if (res && res?.area === parseInt(id)) {
+              console.log(res?.area === parseInt(id) ? res : "");
               setFilteredData(res);
             }
           });
@@ -30,7 +31,7 @@ function Details() {
       });
   }, [id]);
 
-  // console.log(filteredData);
+  console.log(filteredData);
   //
   // useEffect(() => {
   //   const fetchData = async () => {
@@ -78,7 +79,58 @@ function Details() {
       className={`details-page ${isDarkMode ? "dark-mode" : ""}`}
       id="details"
     >
-      {/* <div>{filteredData?.flags?.png}</div> */}
+      {/* <h1>hello</h1>
+      <img
+        src={filteredData?.flags?.png}
+        width={"100%"}
+        alt="country-flag"
+        style={{ height: "auto", borderRadius: "5px" }}
+      ></img>
+      <div>
+        Native Name:
+        {filteredData?.name?.nativeName
+          ? filteredData?.name?.nativeName[
+              Object.keys(filteredData?.name?.nativeName)[0]
+            ]?.official
+          : "None"}
+      </div>
+      <h3 className="details-header">{filteredData?.name?.official}</h3>
+      <div>Population: {filteredData?.population}</div>
+      <div>Region: {filteredData?.region}</div>
+      <div>Sub Region: {filteredData?.subregion}</div>
+      <div>
+        Capital: {filteredData?.capital ? filteredData?.capital[0] : "None"}
+      </div>
+      <div>Top Level Domain: {filteredData?.tld}</div>
+      <div>
+        Currencies:{" "}
+        {filteredData?.currencies
+          ? filteredData?.currencies[Object.keys(filteredData.currencies)[0]]
+              .name
+          : "None"}
+      </div>
+      <div>
+        Languages:{" "}
+        {filteredData?.languages
+          ? filteredData?.languages[Object.keys(filteredData?.languages)[0]]
+          : "None"}
+      </div>
+      {Array.isArray(filteredData?.borders) ? (
+        <div className="border-items">
+          {filteredData?.borders.map((item, index) => (
+            <Link to={`../border/${item}`}>
+              <div className="borders" key={index}>
+                {item}
+              </div>
+            </Link>
+          ))}
+        </div>
+      ) : (
+        <div className="borders-container">
+          <div className="borders">No Borders</div>
+        </div>
+      )} */}
+
       <div className="details-container">
         <Link to={"/"}>
           <div className="back-button">
@@ -103,35 +155,38 @@ function Details() {
             <div className="details-sub-content">
               <div className="details-left">
                 <div>
-                  Native Name:{" "}
-                  {
-                    filteredData?.name?.nativeName[
-                      Object.keys(filteredData?.name?.nativeName)[0]
-                    ].official
-                  }
+                  Native Name:
+                  {filteredData?.name?.nativeName
+                    ? filteredData?.name?.nativeName[
+                        Object.keys(filteredData?.name?.nativeName)[0]
+                      ]?.official
+                    : "None"}
                 </div>
                 <div>Population: {filteredData?.population}</div>
                 <div>Region: {filteredData?.region}</div>
                 <div>Sub Region: {filteredData?.subregion}</div>
-                <div>Capital: {filteredData?.capital[0]}</div>
+                <div>
+                  Capital:{" "}
+                  {filteredData?.capital ? filteredData?.capital[0] : "None"}
+                </div>
               </div>
               <div className="details-right">
                 <div>Top Level Domain: {filteredData?.tld}</div>
                 <div>
                   Currencies:{" "}
-                  {
-                    filteredData?.currencies[
-                      Object.keys(filteredData?.currencies)[0]
-                    ].name
-                  }
+                  {filteredData?.currencies
+                    ? filteredData?.currencies[
+                        Object.keys(filteredData.currencies)[0]
+                      ].name
+                    : "None"}
                 </div>
                 <div>
                   Languages:{" "}
-                  {
-                    filteredData?.languages[
-                      Object.keys(filteredData?.languages)[0]
-                    ]
-                  }
+                  {filteredData?.languages
+                    ? filteredData?.languages[
+                        Object.keys(filteredData?.languages)[0]
+                      ]
+                    : "None"}
                 </div>
               </div>
             </div>

@@ -12,6 +12,8 @@ function LandingPage() {
   const [filterSearch, setFilterSearch] = useState("");
   const [defaultData, setDefaultData] = useState([]);
 
+  const [error, setError] = useState(false);
+
   // const [errorMsg, setErrorMsg] = useState("");
 
   useEffect(() => {
@@ -21,7 +23,6 @@ function LandingPage() {
         const jsonData = await response.json();
         setData(jsonData);
         setDefaultData(jsonData);
-        console.log(jsonData);
       } catch (error) {
         console.error("Error:", error);
       }
@@ -38,9 +39,11 @@ function LandingPage() {
       .then((responseJSON) => {
         if (responseJSON && responseJSON.length > 0) {
           setData(responseJSON);
+          setError(false);
         } else {
           // Handle invalid search result
-          alert(`${filterSearch} is an Invalid input...`);
+          // alert(`${filterSearch} is an Invalid input...`);
+          setError(true);
           document.getElementById("search").value = "";
           setData(defaultData); // setData to the defaultData generated
         }
@@ -50,28 +53,10 @@ function LandingPage() {
       });
   }, [filterPath, filterSearch, defaultData]);
 
-  // filter Region UseEffect handler
-  useEffect(() => {
-    // setFilterSearch(e.target.value);
-    fetch(`https://restcountries.com/v3.1/${filterPath}/${filterSearch}`)
-      .then((response) => response.json())
-      .then((responseJSON) => {
-        if (responseJSON && responseJSON.length > 0) {
-          setData(responseJSON);
-        } else {
-          // Handle invalid search result
-          // document.getElementById("search").value = "";
-          setData(defaultData); // setData to the defaultData generated
-        }
-      })
-      .catch((error) => {
-        // alert(`${filterSearch} is an Invalid input...`);
-      });
-  }, [filterPath, filterSearch, defaultData]);
-
   const handleSearch = (e) => {
     if (e.target.value === "") {
       setFilterPath("all");
+      setError(false);
     } else {
       setFilterPath("name");
     }
@@ -81,6 +66,7 @@ function LandingPage() {
   const handleFilter = (e) => {
     if (e.target.value === "") {
       setFilterPath("all");
+      setError(false);
     } else {
       setFilterPath("region");
     }
@@ -122,28 +108,45 @@ function LandingPage() {
         </select>
       </div>
 
-      {/* {renderErrorMessage()} */}
-      <div className="items-div">
-        {data.map((item, index) => (
-          <div className="item" key={index}>
-            <Link to={`detail/${item.area}`}>
-              <img
-                src={item.flags.png}
-                width={"100%"}
-                height={160}
-                alt="country-flag"
-              ></img>
-              <div className="item-description">
-                <h3>{item.name.official}</h3>
-                <p>Population: {item?.population}</p>
-                <p>Region: {item?.region}</p>
-                <p>Capital: {item?.capital}</p>
-              </div>
-            </Link>
-          </div>
-        ))}
-        <div className="item"></div>
-      </div>
+      {error ? (
+        <h1
+          className="items-div"
+          style={{
+            paddingTop: "50px",
+            height: "100vh",
+            fontSize: "16px",
+            display: "block",
+            justifyContent: "flex-start",
+            alignItems: "flex-start",
+          }}
+        >
+          ...Oops! Seems your search item doesn't match any item within the
+          Database
+          <p style={{ paddingTop: "30px" }}>Please Try Again</p>
+        </h1>
+      ) : (
+        <div className="items-div">
+          {data.map((item, index) => (
+            <div className="item" key={index}>
+              <Link to={`detail/${item.area}`}>
+                <img
+                  src={item.flags.png}
+                  width={"100%"}
+                  height={160}
+                  alt="country-flag"
+                ></img>
+                <div className="item-description">
+                  <h3>{item.name.official}</h3>
+                  <p>Population: {item?.population}</p>
+                  <p>Region: {item?.region}</p>
+                  <p>Capital: {item?.capital}</p>
+                </div>
+              </Link>
+            </div>
+          ))}
+          <div className="item"></div>
+        </div>
+      )}
     </section>
   );
 }
