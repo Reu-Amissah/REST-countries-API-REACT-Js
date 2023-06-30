@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 import "../Styles/Landing.css";
 import "../Styles/Mq.css";
 import { DarkModeContext } from "../Components/DarkMode";
@@ -18,7 +18,7 @@ function Details() {
         if (responseJSON != null) {
           Object.keys(responseJSON).forEach((key) => {
             const res = responseJSON[key];
-            if (res && res?.area == id) {
+            if (res && res?.area === parseInt(id)) {
               setFilteredData(res);
             }
           });

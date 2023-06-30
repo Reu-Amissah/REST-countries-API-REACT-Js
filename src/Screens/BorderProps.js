@@ -19,7 +19,7 @@ function BorderProps() {
         if (responseJSON != null) {
           Object.keys(responseJSON).forEach((key) => {
             const res = responseJSON[key];
-            if (res && res?.cca3 == name) {
+            if (res && res?.cca3 === name) {
               setFilteredData(res);
             }
           });
