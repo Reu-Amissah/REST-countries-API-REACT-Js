@@ -1,6 +1,6 @@
 // --DARK MODE COLOR ASSIGNMENTS• HEADER
-#body.dark-mode {
-  header {
+#body {
+  .dark-mode {
     background-color: $background-color-dark;
     box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.0562443);
     .header-title,
@@ -64,6 +64,7 @@
           .border-items {
             .borders {
               background-color: $background-color-dark;
+              color: $text-color-dark;
             }
           }
         }
